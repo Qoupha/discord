@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="app_container">
+        <!-- САЙДБАР -->
+        <div class="sidebar">
+            <div class="sidebar_top">
+                <div class="sidebar-header">
+                    <div class="temp-svg-header__container">
+                        <a href="reg.html">
+                        <div class="temp-svg-container__container"></div>
+                        </a>
+                    </div>
+                    <div class="temp-svg-header__container">
+                        <div class="temp-svg-container__container yellow"></div>
+                    </div>
+                    <div class="temp-svg-header__container">
+                        <div class="temp-svg-container__container green"></div>
+                    </div>
+                </div>
+                <div class="sidebar__container" id='sidebar-header'>
+                </div>
+            </div>
+            <!-- МОДАЛКА НАСТРОЕК -->
+            <div class="sidebar_bottom__container">
+                <div class="sidebar-bottom">
+                    <div class="sidebar-bottom_settings">
+
+                        <!-- Элементы для вызова модальных окон, могут быть любые -->
+
+                        <a href="#" class="js-open-modal" data-modal="1"><button id="btn_modal_window">
+                                <img src="img/settings.png" alt="">
+                            </button></a>
+
+
+                        <!-- Несколько модальных окон -->
+
+                        <div class="modal" data-modal="1">
+                            <!--   Svg иконка для закрытия окна  -->
+                            <svg class="modal__cross js-modal-close" xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 24 24">
+                                <path
+                                    d="M23.954 21.03l-9.184-9.095 9.092-9.174-2.832-2.807-9.09 9.179-9.176-9.088-2.81 2.81 9.186 9.105-9.095 9.184 2.81 2.81 9.112-9.192 9.18 9.1z" />
+                            </svg>
+                            <div class="modal__title">
+                                <div class="modal_content">
+                                    <div class="modal_content_sidebar">
+                                        <button onclick="showHide('profile')">
+                                            MY PROFILE
+                                        </button>
+                                        <button onclick="showHide('voice')">
+                                            VOICE AND AUDIO
+                                        </button>
+                                        <button onclick="showHide('confidentiality')">
+                                            CONFIDENTIALITY
+                                        </button>
+                                    </div>
+                                    <div class="modal_content_account__container" id='modal_content_account__container'>
+                                        <div class="modal_content_account">
+                                            <div class="modal_content_account-av">
+                                                <img src="img/av.jpg" alt="">
+                                                <div class="modal_content_account-av_change">
+                                                    <button>
+                                                        <p>CHANGE AVATAR</p>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <div class="modal_content_account-center">
+                                                <div class="modal_content_account_title-username">
+                                                    <p>Username and Email</p>
+                                                </div>
+                                                <div class="modal_content_account-name">
+                                                    <div class="modal_content_account-name_nick">
+                                                        <button>Qoupha</button>
+                                                    </div>
+                                                    <div class="modal_content_account-name_email">
+                                                        <button>Qoupha@mail.ru</button>
+                                                    </div>
+                                                    <div class="modal_content_account-form">
+                                                        <input class="form_nick" type="text" name="" id="form"
+                                                            placeholder="Enter Nickname">
+                                                        <input class="form_email" type="text" name="" id="form"
+                                                            placeholder="Enter Email">
+                                                        <input class="form_pass" type="text" name="" id="form"
+                                                            placeholder="Enter Password">
+                                                    </div>
+                                                    <div class="modal_content_account-name_change">
+                                                        <button>
+                                                            <p>CHANGE</p>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="modal_content_account-right">
+                                                <div class="modal_content_account-subtitle">
+                                                    <p>Hi! My name is Qoupha. <br> Lorem ipsum dolor, sit amet
+                                                        consectetur
+                                                        adipisicing elit. Dolores nam nobis mollitia esse quaerat ipsa a
+                                                        hic, nisi ullam laboriosam blanditiis modi qui at recusandae ab
+                                                        libero dignissimos. Ullam, dolore.</p>
+                                                </div>
+                                                <div class="modal_content_account-subtitle_change">
+                                                    <button>
+                                                        <p>CHANGE SUBTITLE</p>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal_content_voice__container" id="modal_content_voice__container">
+                                        <div class="modal_content_voice__container-top">
+                                            <div class="modal_content_voice__container-top_name">
+                                                <p>Volume control</p>
+                                            </div>
+                                            <div class="modal_content_voice__container-top_slider">
+                                                <input type="range" min="1" max="50" id="size">
+                                            </div>
+                                        </div>
+                                        <div class="modal_content_voice__container-bottom">
+                                            <div class="modal_content_voice__container-bottom_name">
+                                                <p>Microphone control</p>
+                                            </div>
+                                            <div class="modal_content_voice__container-bottom_slider">
+                                                <input type="range" min="1" max="50" id="size">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal_content_confidentiality__container"
+                                        id="modal_content_confidentiality__container">
+                                        <div class="modal_content_confidentiality__container_input">
+                                            <div class="modal_content_confidentiality__container_input-check">
+                                                <div class='checkbox-container'>
+                                                    <label for="toggle1"><span>Enable Desktop
+                                                        Notifications
+                                                        </span></label>
+                                                    <input class="checkbox" type="checkbox" id="toggle1">
+                                                    <div class="checkbox-visual">
+                                                        <div></div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            <div class="modal_content_confidentiality__container_input-check">
+                                                <div class='checkbox-container'>
+                                                    <label for="toggle1"><span>Enable Desktop
+                                                            Notifications</span></label>
+                                                    <input class="checkbox" type="checkbox" id="toggle1">
+                                                    <div class="checkbox-visual">
+                                                        <div></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="overlay js-overlay-modal"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- НОМАД -->
+        <div class="nomad">
+            <div class="nomad_txt">
+                <p>Nomad List</p>
+            </div>
+            <div class="Treads_txt">
+                <p>All treads</p>
+            </div>
+            <div class="channels">
+                <div class="channels_txt" id="channels_txt">
+                    <p>CHANNELS</p>
+                    <div class="amount-channels">
+                        <p id="amount-channels">11</p>
+                    </div>
+                </div>
+                <div class="scrollbar_channels">
+                    <div class="channels_pg" id="channels_pg">
+                    </div>
+                </div>
+
+            </div>
+            <!-- ДРУЗЬЯ -->
+            <div class="friends">
+                <p>FRIENDS</p>
+                <div class="amount-friends" id="amount-friends">
+                </div>
+            </div>
+            <div class="friends_list" id="friends_list">
+
+            </div>
+        </div>
+        <!-- ЧАТ -->
+        <div class="wrapper">
+
+            <div class="wrapper__container">
+                <div class="wrapper__container-nav">
+                    <div class="wrapper__container-nav__left">
+                        <div class="channel" id="channelName">
+                            <p3># general</p3>
+                        </div>
+                    </div>
+                    <div class="wrapper__container-nav__right">
+                        <div class="amount">
+                            <p3>1,093</p3>
+                        </div>
+                        <div class="search">
+                            <div class="search__container">
+                                <input autocomplete="search" name="search" type="search" class="search_1 "
+                                    id="site-search " placeholder="Search... ">
+                                <svg width="23" height="22" viewBox="0 0 23 22" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <g opacity="0.5" filter="url(#filter0_d_0_192)">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M18.3637 13.8659C18.1867 14.04 17.8999 14.04 17.7229 13.8659L14.095 10.2957C13.0827 11.1041 11.7939 11.59 10.3887 11.59C7.13643 11.59 4.49994 8.99553 4.49994 5.79505C4.49994 2.59451 7.13643 -5.36442e-07 10.3887 -5.36442e-07C13.6409 -5.36442e-07 16.2775 2.59451 16.2775 5.79505C16.2775 7.29151 15.6961 8.65106 14.7498 9.67922L18.3637 13.2354C18.5406 13.4096 18.5406 13.6919 18.3637 13.8659ZM10.3887 0.89159C7.63669 0.89159 5.40582 3.08686 5.40582 5.79505C5.40582 8.50321 7.63669 10.6986 10.3887 10.6986C13.1406 10.6986 15.3714 8.50321 15.3714 5.79505C15.3714 3.08686 13.1406 0.89159 10.3887 0.89159Z"
+                                            fill="black" />
+                                    </g>
+                                    <defs>
+                                        <filter id="filter0_d_0_192" x="0.499878" y="0" width="21.9965" height="21.9965"
+                                            filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                            <feColorMatrix in="SourceAlpha" type="matrix"
+                                                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+                                            <feOffset dy="4" />
+                                            <feGaussianBlur stdDeviation="2" />
+                                            <feComposite in2="hardAlpha" operator="out" />
+                                            <feColorMatrix type="matrix"
+                                                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" />
+                                            <feBlend mode="normal" in2="BackgroundImageFix"
+                                                result="effect1_dropShadow_0_192" />
+                                            <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_0_192"
+                                                result="shape" />
+                                        </filter>
+                                    </defs>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="notifications">
+                            <img src="/img/notifications.png" alt="">
+                        </div>
+                        <div class="dots">
+                            <img src="/img/dots.png" alt="">
+                        </div>
+                        <a href="#" onclick="onHandler()">
+                            <div class="arrow-right">
+                                <img id='arrow-click' src="img/arrow.png" alt="">
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="chat" >
+                    <div class="scrollbar_chat" id="changeChat">
+
+                    </div>
+                    <div class="chat-panel">
+
+                        <div class="chat-panel_attach">
+                            <img src="img/attach.png" alt="">
+                        </div>
+                        <div class="chat-panel_voice">
+                            <img src="img/voice.png" alt="">
+                        </div>
+                        <div class="chat-panel_smile">
+                            <div class="chat-panel_smile_settings">
+                                <img src="img/smile.png" alt="">
+                            </div>
+                        </div>
+                        <div class="search1">
+                            <div class="search__container1">
+                                <input autocomplete="message" name="message" type="message" class="message_1"
+                                    style="display:flex;  width: 100%;" id="site-search "
+                                    placeholder="Message in #general ">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!-- ЮЗЕР ИНФО -->
+            <div id="info">
+                <div class="info_av">
+                    <img src="img/photo.jpg" alt="">
+                </div>
+                <div class="info_name">
+                    <p2>Amilia Luna</p2>
+                    <div class="info_name_status">
+                        <img src="img/green.png" alt="">
+                    </div>
+                </div>
+                <div class="info_pr">
+                    <p2>UI Designer</p2>
+
+                </div>
+                <div class="info_network">
+                    <div class="info_network_facebook">
+                        <img src="img/facebook2.png" alt="">
+                    </div>
+                    <div class="info_network_facebook1">
+                        <img src="img/inst.png" alt="">
+                    </div>
+                    <div class="info_network_facebook2">
+                        <img src="img/twit.png" alt="">
+                    </div>
+
+                </div>
+                <div class="button">
+                    <button>
+                        Message
+                    </button>
+                    <div class="button_right">
+                        <button>
+                            <img src="img/btn.png" alt="">
+                        </button>
+                    </div>
+                </div>
+                <div class="info_about">
+                    <div class="info_about_username">
+                        <div class="info_about_username_top">
+                            <p2>Username</p2>
+                        </div>
+                        <div class="info_about_username_bottom">
+                            <p2>@amilia_lu</p2>
+                        </div>
+                    </div>
+                    <div class="info_about_email">
+                        <div class="info_about_email_top">
+                            <p2>Email</p2>
+                        </div>
+                        <div class="info_about_email_bottom">
+                            <p2><a href="mailto:a-luna@gmail.com">a-luna@gmail.com</a></p2>
+                        </div>
+                    </div>
+                    <div class="info_about_skype">
+                        <div class="info_about_skype_top">
+                            <p2>Skype</p2>
+                        </div>
+                        <div class="info_about_skype_bottom">
+                            <p2><a href="skype:amiluna?call">amiluna</a> </p2>
+                        </div>
+                    </div>
+                    <div class="info_about_time">
+                        <div class="info_about_time_top">
+                            <p2>Timezone</p2>
+                        </div>
+                        <div class="info_about_time_bottom">
+                            <p2>2:21 PM Local time</p2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/main.js"></script>
+
+</body>
+</html>

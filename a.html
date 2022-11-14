@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>бла бла</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<script>
+function showHide(elemID){
+    document.getElementById(elemID=="blok_id"?"blok_1":"blok_id").style.display = "none";
+    document.getElementById(elemID=="blok_id"?"blok_id":"blok_1").style.display = "block";
+}
+</script>
+<body>
+<li><a href="#" onclick="showHide('blok_id')">Налаштування</a></li>
+<li><a href="#" onclick="showHide('blok_1')">Повідомлення</a></li>
+<div id="blok_id">  Хрень</div>
+<div id="blok_1">  Корешок</div>
+</body>
+</html>
